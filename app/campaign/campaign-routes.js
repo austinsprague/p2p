@@ -1,0 +1,17 @@
+(function () {
+  'use strict';
+
+  angular
+    .module('campaign')
+    .config(config);
+
+  function config($stateProvider) {
+    $stateProvider
+      .state('campaign', {
+        url: '/campaign',
+        templateUrl: 'campaign/views/campaign.tpl.html',
+        controller: 'CampaignCtrl',
+        controllerAs: 'campaign'
+      });
+  }
+}());
