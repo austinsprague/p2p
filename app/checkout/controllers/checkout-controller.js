@@ -15,6 +15,5 @@
   function CheckoutCtrl() {
     var vm = this;
     vm.ctrlName = 'CheckoutCtrl';
-
   }
 }());

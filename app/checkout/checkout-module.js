@@ -9,7 +9,7 @@
   angular
     .module('checkout', [
       'ui.router',
-      'angularPayments',
+      'angularPayments'
       // 'stripe'
     ]);
 }());
