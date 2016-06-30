@@ -15,5 +15,7 @@
   function HomeCtrl() {
     var vm = this;
     vm.ctrlName = 'HomeCtrl';
+
+    vm.css = 'home';
   }
 }());

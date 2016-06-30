@@ -12,6 +12,8 @@
       'ngMaterial',
       'ui.router',
       'home',
-      'campaign'
+      'campaign',
+      'checkout',
+      // 'angularPayments'
     ]);
 }());
