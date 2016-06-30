@@ -13,7 +13,8 @@
       'ui.router',
       'home',
       'campaign',
-      'checkout'
-      // 'angularPayments'
+      'checkout',
+      // 'angularPayments',
+      'campaignDetail'
     ]);
 }());
