@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /*div {
   border: solid black 1px;
 }*/
@@ -7,7 +7,7 @@ background-size:contain;
 background-repeat: no-repeat; height:400px"*/
 
 
-.main {
+/*.main {
     position: relative;
     overflow: hidden;
 }
@@ -22,11 +22,11 @@ background-repeat: no-repeat; height:400px"*/
   width: 100%;
   height: 100%;
   opacity : 0.2;
-  z-index: -1;
-=======
-div {
+  z-index: -1;*/
+
+/*div {
   border:solid black 1px;
-}
+}*/
 
 nav ul a,
 nav .brand-logo {
@@ -76,5 +76,4 @@ p {
 
 footer.page-footer {
   margin: 0;
->>>>>>> c8eb31d616a92246b42e8aca82105d71128f728c
 }
