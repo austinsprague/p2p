@@ -12,8 +12,12 @@
     .module('campaign')
     .controller('CampaignCtrl', CampaignCtrl);
 
-  function CampaignCtrl() {
+  function CampaignCtrl($state, CampaignService) {
     var vm = this;
-    vm.ctrlName = 'CampaignCtrl';
+
+    CampaignService.getProjects().then(function(data){
+       vm.projects = data;
+       console.log(vm.projects);
+    });
   }
 }());
