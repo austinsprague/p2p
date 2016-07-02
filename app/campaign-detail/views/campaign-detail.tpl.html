@@ -1,6 +1,6 @@
 <div class="row" style="margin-top:5%">
   <div class="col l8">
-    <h5>Buisiness Name</h5>
+    <h5>{{campaignDetail.company_name}}</h5>
   </div>
   <div class="col l4">
     <div class="chip">Retail</div>
@@ -9,7 +9,7 @@
   </div>
 <div class="row">
   <div class="col l8" style="width 100%">
-    <img src="../../images/local.jpeg" alt="" />
+    <img src="{{campaignDetail.img_url}}" alt="" />
   </div>
   <div class="col l4">
     <ul class="collection with-header">
@@ -21,4 +21,18 @@
     <input type="number"></input>
     <a class="waves-effect orange btn-flat">Support</a>
   </div>
+</div>
+<div class="row">
+    <div class="col l6">
+      <ul class="tabs">
+        <li class="tab col s3"><a ui-sref="#test1">Test 1</a></li>
+        <li class="tab col s3"><a class="active" ui-sref="#test2">Test 2</a></li>
+        <li class="tab col s3 disabled"><a ui-sref="#test3">Disabled Tab</a></li>
+        <li class="tab col s3"><a ui-sref="#test4">Test 4</a></li>
+      </ul>
+    </div>
+    <div id="test1" class="col s12">Test 1</div>
+    <div id="test2" class="col s12">Test 2</div>
+    <div id="test3" class="col s12">Test 3</div>
+    <div id="test4" class="col s12">Test 4</div>
 </div>
