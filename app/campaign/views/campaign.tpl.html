@@ -4,63 +4,19 @@
   <div class="divider"></div>
   </div>
   <div class="row">
-    <div class="col l5">
+    <div class="col l5" ng-repeat="project in campaign.projects">
       <div class="card small hoverable">
         <div class="card-image" style="height:300px;">
-          <img src="">
-          <span class="card-title teal-text">Business Name</span>
+          <img src="../../images/local.jpeg">
+          <span class="card-title teal-text">{{project.company_name}}</span>
         </div>
         <div class="card-content">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
         <div class="card-action">
-          <a ng-href="#/campaign-detail/campaign-detail">Learn More</a>
+          <a ui-sref="campaignDetail({id: 5})">Learn More</a>
         </div>
       </div>
     </div>
-
-    <div class="col l5">
-      <div class="card small hoverable">
-        <div class="card-image" style="height:300px;">
-          <img src="">
-          <span class="card-title teal-text">Business Name</span>
-        </div>
-        <div class="card-content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-        <div class="card-action">
-          <a ng-href="#/campaign-detail">Learn More</a>
-        </div>
-      </div>
-    </div>
-    <div class="col l5">
-      <div class="card small hoverable">
-        <div class="card-image" style="height:300px;">
-          <img src="">
-          <span class="card-title teal-text">Business Name</span>
-        </div>
-        <div class="card-content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-        <div class="card-action">
-          <a ng-href="#/campaign-detail">Learn More</a>
-        </div>
-      </div>
-    </div>
-    <div class="col l5">
-      <div class="card small hoverable">
-        <div class="card-image" style="height:300px;">
-          <img src="">
-          <span class="card-title teal-text">Business Name</span>
-        </div>
-        <div class="card-content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-        <div class="card-action">
-          <a ng-href="#/campaign-detail">Learn More</a>
-        </div>
-      </div>
-    </div>
-
   </div>
 </div>

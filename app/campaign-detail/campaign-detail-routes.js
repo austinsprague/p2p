@@ -8,7 +8,7 @@
   function config($stateProvider) {
     $stateProvider
       .state('campaignDetail', {
-        url: '/campaign-detail',
+        url: '/campaign-detail/:id',
         templateUrl: 'campaign-detail/views/campaign-detail.tpl.html',
         controller: 'CampaignDetailCtrl',
         controllerAs: 'campaignDetail'
