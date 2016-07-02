@@ -17,7 +17,6 @@
 
     CampaignService.getProjects().then(function(data){
        vm.projects = data;
-       console.log(vm.projects);
     });
   }
 }());
