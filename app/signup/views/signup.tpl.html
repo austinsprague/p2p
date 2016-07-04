@@ -1,26 +1,26 @@
 <div class="container">
   <div class="row">
-    <form method="POST" id="signup">
+    <form method="POST" id="signup" ng-click="Signup.createUser()">
       <div class="form-row">
         <label>
           <span>Name</span>
-          <input type="text" size="20" name="name" ng-model="signup.user.name">
+          <input type="text" size="20" name="name" ng-model="Signup.user.name">
         </label>
       </div>
 
       <div class="form-row">
         <label>
           <span>Email</span>
-          <input type="text" size="20" name="email" ng-model="signup.user.email" >
+          <input type="text" size="20" name="email" ng-model="Signup.user.email" >
         </label>
       </div>
       <div class="form-row">
         <label>
           <span>Password</span>
-          <input type="text" size="20" name="pwd" ng-model="signup.user.pwd" >
+          <input type="text" size="20" name="pwd" ng-model="Signup.user.pwd" >
         </label>
       </div>
-      <a ng-click="signup.createUser(signup.user)" id="signup-button" class="btn-large waves-effect waves-light blue-grey lighten-1">Signup</a>
+      <a id="signup-button" class="btn-large waves-effect waves-light blue-grey lighten-1">Signup</a>
     </form>
   </div>
 </div>

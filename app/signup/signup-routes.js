@@ -14,7 +14,7 @@
         url: '/signup',
         templateUrl: 'signup/views/signup.tpl.html',
         controller: 'SignupCtrl',
-        controllerAs: 'signup'
+        controllerAs: 'Signup'
       });
   }
 }());
