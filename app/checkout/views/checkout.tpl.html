@@ -1,5 +1,44 @@
 <div class="container">
-  <form action="/charge" method="POST">
+  
+
+<button id="customButton">Purchase</button>
+
+<script>
+  var handler = StripeCheckout.configure({
+    key: 'pk_test_4CENn5hY6qEoQDOLoPtBsg4Y',
+    image: '/img/documentation/checkout/marketplace.png',
+    locale: 'auto',
+    token: function(token) {
+      console.log(token);
+      // You can access the token ID with `token.id`.
+      // Get the token ID to your server-side code for use.
+    }
+  });
+
+  $('#customButton').on('click', function(e) {
+    // Open Checkout with further options:
+    handler.open({
+      name: 'austin_s',
+      description: '2 widgets',
+      zipCode: true,
+      amount: 2000
+    });
+    e.preventDefault();
+  });
+
+  // Close Checkout on page navigation:
+  $(window).on('popstate', function() {
+    handler.close();
+  });
+</script>
+
+
+
+
+
+
+
+  <!-- <form action="/charge" method="POST">
     <span class="payment-errors"></span>
 
     <div class="form-row">
@@ -45,5 +84,5 @@
     data-locale="auto"
     data-zip-code="true">
   </script>
-  </form>
+  </form> -->
 </div>
