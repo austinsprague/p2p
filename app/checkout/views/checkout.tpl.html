@@ -1,9 +1,49 @@
-<form stripe-form="stripeCallback" name="checkoutForm">
-    <input ng-model="number" placeholder="Card Number"
-             payments-format="card" payments-validate="card" name="card" />
-    <input ng-model="expiry" placeholder="Expiration"
-             payments-format="expiry" payments-validate="expiry"
-             name="expiry" />
-    <input ng-model="cvc" placeholder="CVC" payments-format="cvc" payments-validate="cvc" name="cvc" />
-    <button type="submit">Submit</button>
-</form>
+<div class="container">
+  <form action="/charge" method="POST">
+    <span class="payment-errors"></span>
+
+    <div class="form-row">
+      <label>
+        <span>Card Number</span>
+        <input type="text" size="20" data-stripe="number">
+      </label>
+    </div>
+
+    <div class="form-row">
+      <label>
+        <span>Expiration (MM/YY)</span>
+        <input type="text" size="2" data-stripe="exp_month">
+      </label>
+      <span> / </span>
+      <input type="text" size="2" data-stripe="exp_year">
+    </div>
+
+    <div class="form-row">
+      <label>
+        <span>CVC</span>
+        <input type="text" size="4" data-stripe="cvc">
+      </label>
+    </div>
+
+    <div class="form-row">
+      <label>
+        <span>Billing Zip</span>
+        <input type="text" size="6" data-stripe="address_zip">
+      </label>
+    </div>
+
+    <input type="submit" class="submit" value="Submit Payment" id="button">
+
+    <a href="#" class="stripe-connect light-blue dark"><span>Connect with Stripe</span></a>
+    <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_4CENn5hY6qEoQDOLoPtBsg4Y"
+    data-amount="999"
+    data-name="austin_s"
+    data-description="Widget"
+    data-image="/img/documentation/checkout/marketplace.png"
+    data-locale="auto"
+    data-zip-code="true">
+  </script>
+  </form>
+</div>
