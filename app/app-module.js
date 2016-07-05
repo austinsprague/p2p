@@ -15,7 +15,9 @@
       'campaign',
       'checkout',
       // 'angularPayments',
+      'angular-stripe',
       'campaignDetail',
-      'signup'
+      'signup',
+      'profile'
     ]);
 }());

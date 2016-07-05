@@ -2,7 +2,8 @@
   "name": "p2p",
   "version": "0.0.0",
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    "start": "node app/app-module.js"
   },
   "dependencies": {},
   "devDependencies": {
