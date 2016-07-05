@@ -12,31 +12,28 @@
     .module('checkout')
     .controller('CheckoutCtrl', CheckoutCtrl);
 
-  function CheckoutCtrl(stripe, $http) {
-    var vm = this;
-    vm.ctrlName = 'CheckoutCtrl';
+  function CheckoutCtrl($state, stripe, $http) {
 
-    stripe.card.createToken({
-      number: 4242424242424242,
-      cvc: 123,
-      exp_month: 12,
-      exp_year: 17
+    var vm = this;
+
+    vm.user = {};
+    vm.createUser = function(user) {
+      stripe.card.createToken({
+        number: vm.user.ccnumber,
+        cvc: vm.user.cvc,
+        exp_month: vm.user.exp_month,
+        exp_year: vm.user.exp_year
       }, stripeResponseHandler);
 
-    function stripeResponseHandler(status, res) {
-      console.log('this is status' + status);
-      console.log(res.id);
-    }
+      function stripeResponseHandler(status, res) {
+        vm.user.token = {token: res.id};
+        $http.post('http://localhost:5000/api/users', vm.user.token)
+          .then(function(data){
+            console.log(data);
+          }, function (err) {
+            console.log(err);
+          });
+      }
+    };
   };
-
-//     vm.stripeCallback = function (code, result) {
-//     if (result.error) {
-//       console.log(result.error);
-//         // window.alert('it failed! error: ' + result.error.message);
-//     } else {
-//       console.log('this is code:' + code + 'and token: ' + result.id);
-//         // window.alert('success! token: ' + result.id);
-//     }
-// };
-  // }
 }());
