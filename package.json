@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "test": "gulp test",
-    "start": "node app-routes.js"
+    "start": "node app/app-module.js"
   },
   "dependencies": {},
   "devDependencies": {

@@ -24,6 +24,9 @@
       //     console.log($scope.user);
       //   }
       // }
+      // authUser: function(user) {
+      //   return $http.get('http://localhost:5000/auth')
+      // }
     }
   }
 }());

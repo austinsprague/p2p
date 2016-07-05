@@ -12,30 +12,31 @@
     .module('checkout')
     .controller('CheckoutCtrl', CheckoutCtrl);
 
-  function CheckoutCtrl() {
+  function CheckoutCtrl(stripe, $http) {
     var vm = this;
     vm.ctrlName = 'CheckoutCtrl';
 
-    vm.handler = StripeCheckout.configure({
-      key: 'pk_test_9Xzf0OH6f3wkWjcUhMPh9vtD',
-      image: '/img/documentation/checkout/marketplace.png',
-      locale: 'auto',
-      token: function(token) {
-        console.log(token);
-        // You can access the token ID with `token.id`.
-        // Get the token ID to your server-side code for use.
-        }
-    });
+    stripe.card.createToken({
+      number: 4242424242424242,
+      cvc: 123,
+      exp_month: 12,
+      exp_year: 17
+      }, stripeResponseHandler);
 
-    vm.button = function(e) {
-    // Open Checkout with further options:
-      handler.open({
-        name: 'Demo Site',
-        description: '2 widgets',
-        zipCode: true,
-        amount: 2000
-      });
-      e.preventDefault();
-    };
-  }
+    function stripeResponseHandler(status, res) {
+      console.log('this is status' + status);
+      console.log(res.id);
+    }
+  };
+
+//     vm.stripeCallback = function (code, result) {
+//     if (result.error) {
+//       console.log(result.error);
+//         // window.alert('it failed! error: ' + result.error.message);
+//     } else {
+//       console.log('this is code:' + code + 'and token: ' + result.id);
+//         // window.alert('success! token: ' + result.id);
+//     }
+// };
+  // }
 }());

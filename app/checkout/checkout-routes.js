@@ -5,8 +5,8 @@
     .module('checkout')
     .config(config);
 
-  function config($stateProvider) {
-    // $window.Stripe.setPublishableKey('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
+  function config($stateProvider, stripeProvider) {
+    stripeProvider.setPublishableKey('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
     $stateProvider
       .state('checkout', {
         url: '/checkout',
