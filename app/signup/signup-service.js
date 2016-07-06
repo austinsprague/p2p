@@ -5,28 +5,52 @@
   .module('signup')
   .factory('SignupService', SignupService);
 
-  function SignupService() {
-    // $httpProvider.defaults.useXDomain = true;
-    // delete $httpProvider.defaults.headers.common['X-Requested-With'];
+  function SignupService(stripe, $http) {
+
+    function newUser(first_name, last_name, address, city, state, phone_num, email, pwd, token) {
+      this.first_name = first_name;
+      this.last_name= last_name;
+      this.address= address;
+      this.city= city;
+      this.state= state;
+      this.phone_num= phone_num;
+      this.background= background;
+      this.email= email;
+      this.pwd= pwd;
+      this.zip= zip;
+      this.token= token;
+    }
 
     return {
       createUser: function (user) {
         return $http.post('http://localhost:5000/api/signup', user).then(function(data) {
           return data;
-        });
-        $scope.user = {};
-        $scope.createUser = function() {
-          $http({
-            method : 'POST',
-            url : 'http://localhost:5000/api/signup',
-            data : $scope.user
-          });
-          console.log($scope.user);
-        }
+        })
       },
-      authUser: function(user) {
-        return $http.get('http://localhost:5000/auth/stripe')
+      signupUser: function(user) {
+        // user = {};
+        stripe.card.createToken({
+          number: user.ccnumber,
+          cvc: user.cvc,
+          exp_month: user.exp_month,
+          exp_year: user.exp_year
+        }, stripeResponseHandler);
+
+        function stripeResponseHandler(status, res) {
+          user.token = {token: res.id};
+          $http.post('http://localhost:5000/api/user_projects/charge', user.token)
+            .then(function(data){
+              console.log(data);
+            }, function (err) {
+              console.log(err);
+            });
+          }
+        return user;
+        },
+
+        authUser: function(user) {
+          return $http.get('http://localhost:5000/auth/stripe')
+        }
       }
     }
-  }
 }());

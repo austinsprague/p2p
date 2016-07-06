@@ -5,10 +5,9 @@
     .module('checkout')
     .config(config);
 
-  function config($stateProvider, stripeProvider, $httpProvider) {
-    $httpProvider.defaults.useXDomain = true;
-    delete $httpProvider.defaults.headers.common['X-Requested-With'];
-    stripeProvider.setPublishableKey('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
+  function config($stateProvider, stripeProvider) {
+
+    stripeProvider.setPublishableKey('pk_test_4CENn5hY6qEoQDOLoPtBsg4Y');
     $stateProvider
       .state('checkout', {
         url: '/checkout',
