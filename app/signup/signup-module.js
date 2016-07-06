@@ -8,6 +8,7 @@
    */
   angular
     .module('signup', [
-      'ui.router'
+      'ui.router',
+      'angular-stripe'
     ]);
 }());
