@@ -12,7 +12,7 @@
     .module('profile')
     .controller('ProfileCtrl', ProfileCtrl);
 
-  function ProfileCtrl($state, ProfileService) {
+  function ProfileCtrl() {
     var vm = this;
     vm.ctrlName = 'ProfileCtrl';
   }

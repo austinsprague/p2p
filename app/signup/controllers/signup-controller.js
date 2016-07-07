@@ -24,25 +24,26 @@
         exp_year: vm.user.exp_year
       }, stripeResponseHandler);
 
-      vm.insertUser = {
+      vm.sendUser = {
         first_name: vm.user.first_name,
         last_name: vm.user.last_name,
         address: vm.user.address,
         city: vm.user.city,
         state: vm.user.state,
         phone_num: vm.user.phone_num,
-        background: vm.user.background,
         email: vm.user.email,
-        pwd: vm.user.pwd,
-        zip: vm.user.zip
-        // token: vm.user.token
+        zip: vm.user.zip,
+        token: '',
+        stripe_card_id:''
       }
 
       function stripeResponseHandler(status, res) {
-        vm.insertUser.token = res.id;
-        $http.post('http://localhost:5000/api/signup', vm.insertUser)
+        console.log(res.card.id);
+        vm.sendUser.token = res.id;
+        vm.sendUser.stripe_card_id = res.card.id;
+        $http.post('http://localhost:5000/api/signup', vm.sendUser)
           .then(function(data){
-            console.log('this is the data' + data);
+            console.log(data);
           }, function (err) {
             console.log(err);
           });
