@@ -24,5 +24,9 @@
     ProfileService.getProjects(currentUserId).then(function(projects){
       vm.projects = projects;
     });
+    vm.createCampaign = function(){
+      ProfileService.createCampaign(vm.proj, currentUserId);
+      $state.go('profile');
+    }
   }
 }());
