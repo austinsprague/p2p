@@ -9,12 +9,12 @@
 
     return {
       getProjects: function() {
-        return $http.get('http://localhost:5000/api/projects').then(function(result) {
+        return $http.get('/api/projects', {withCredentials: true}).then(function(result) {
           return result.data;
         });
       }
       // getUsers: function() {
-      //   return $http.get('http://localhost:5000/api/users').then(function(users) {
+      //   return $http.get('/api/users').then(function(users) {
       //     return users.data;
       //   });
       // }

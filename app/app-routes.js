@@ -3,9 +3,11 @@
 
   angular
     .module('p2p')
-    .config(config);
+    .config(config)
 
-  function config($urlRouterProvider) {
+  function config($urlRouterProvider, $httpProvider) {
+
     $urlRouterProvider.otherwise('/home');
+    $httpProvider.defaults.withCredentials = true;
   }
 }());

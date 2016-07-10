@@ -5,7 +5,8 @@
     .module('campaignDetail')
     .config(config);
 
-  function config($stateProvider) {
+    function config($stateProvider, $httpProvider) {
+    $httpProvider.defaults.withCredentials = true;
 
     $stateProvider
       .state('campaignDetail', {

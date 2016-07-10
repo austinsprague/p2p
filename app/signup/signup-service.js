@@ -23,7 +23,7 @@
 
     return {
       createUser: function (user) {
-        return $http.post('http://localhost:5000/api/signup', user).then(function(data) {
+        return $http.post('/api/signup', user).then(function(data) {
           return data;
         })
       },
@@ -38,7 +38,7 @@
 
         function stripeResponseHandler(status, res) {
           user.token = {token: res.id};
-          $http.post('http://localhost:5000/api/user_projects/charge', user.token)
+          $http.post('/api/user_projects/charge', user.token)
             .then(function(data){
               console.log(data);
             }, function (err) {
@@ -47,9 +47,11 @@
           }
         return user;
         },
-
         authUser: function(user) {
-          return $http.get('http://localhost:5000/auth/stripe')
+          return $http.get('/auth/stripe')
+        },
+        loggedIn: function() {
+          return $http.get('/users/loggedIn')
         }
       }
     }

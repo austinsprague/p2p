@@ -9,15 +9,14 @@
   angular
     .module('p2p', [
       'ngAria',
-      'ngMaterial',
       'ui.router',
       'home',
       'campaign',
       'checkout',
-      // 'angularPayments',
       'angular-stripe',
       'campaignDetail',
       'signup',
-      'profile'
+      'profile',
+      'ngCookies'
     ]);
 }());

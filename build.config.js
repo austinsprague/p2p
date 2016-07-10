@@ -1,6 +1,6 @@
 'use strict';
 
-var outDir = 'build/';
+var outDir = '../p2p-server/public/';
 
 module.exports = {
   host: 'localhost',

@@ -9,6 +9,7 @@
   angular
     .module('signup', [
       'ui.router',
-      'angular-stripe'
+      'angular-stripe',
+      'ngCookies'
     ]);
 }());
