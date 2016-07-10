@@ -6,8 +6,7 @@
     .config(config);
 
     function config($stateProvider, $httpProvider) {
-      $httpProvider.defaults.useXDomain = true;
-      delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    $httpProvider.defaults.withCredentials = true;
 
     $stateProvider
       .state('campaignDetail', {

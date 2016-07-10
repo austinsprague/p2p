@@ -8,6 +8,7 @@
    */
   angular
     .module('home', [
-      'ui.router'
+      'ui.router',
+      'ngCookies'
     ]);
 }());

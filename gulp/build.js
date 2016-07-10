@@ -11,7 +11,7 @@ module.exports = function (gulp, $, config) {
 
   // delete build directory
   gulp.task('clean', function () {
-    return $.del(config.buildDir);
+    return $.del(config.buildDir, {force: true});
   });
 
   // compile markup files and copy into build directory

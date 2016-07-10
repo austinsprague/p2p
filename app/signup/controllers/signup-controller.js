@@ -14,8 +14,18 @@
 
   function SignupCtrl($state, SignupService, stripe, $http) {
     var vm = this;
-
+    // vm.loggedin = function(){
+    //   console.log(req.user);
+    // }
+    vm.person = SignupService.loggedIn().then(function(user){
+      console.log(req.session);
+      return user
+    });
     vm.user = {};
+    vm.authUser = SignupService.authUser().then(function(data){
+      console.log(data);
+      return data;
+    })
     vm.createUser = function(user) {
       stripe.card.createToken({
         number: vm.user.ccnumber,
@@ -41,7 +51,7 @@
         console.log(res.card.id);
         vm.sendUser.token = res.id;
         vm.sendUser.stripe_card_id = res.card.id;
-        $http.post('http://localhost:5000/api/signup', vm.sendUser)
+        $http.post('/api/signup', vm.sendUser)
           .then(function(data){
             console.log(data);
           }, function (err) {

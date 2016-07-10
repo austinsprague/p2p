@@ -27,7 +27,7 @@
 
       function stripeResponseHandler(status, res) {
         vm.user.token = {token: res.id};
-        $http.post('http://localhost:5000/api/user_projects/charge', vm.user.token)
+        $http.post('/api/user_projects/charge', vm.user.token)
           .then(function(data){
             console.log(data);
           }, function (err) {

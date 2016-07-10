@@ -13,5 +13,6 @@
         controller: 'HomeCtrl',
         controllerAs: 'home'
       });
+
   }
 }());
