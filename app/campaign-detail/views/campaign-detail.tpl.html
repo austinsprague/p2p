@@ -13,7 +13,7 @@
       </div>
       <div class="col l4">
         <ul class="collection with-header">
-          <li class="collection-header" ng-show="{{campaignDetail.amtPledged}}"><h4>{{campaignDetail.amtPledged}} Pledged</h4></li>
+          <li class="collection-header"><h4>{{campaignDetail.amtPledged}} Pledged</h4></li>
           <li class="collection-item"><div>14 Days Left!</div></li>
           <li class="collection-item"><div>{{campaignDetail.backerCount}} Backers</div></li>
           <li class="collection-item"><div class="progress"><div class="determinate" style="width: 70%"></div></div></li>
@@ -21,13 +21,6 @@
         <div class="row">
           <form class="" method="post">
             <div class="col l6">
-              <!-- <select class="browser-default" ng-model="userCharge">
-                <option value="" disabled selected>$ choose</option>
-                <option value="10" selected>$10</option>
-                <option value="20">$20</option>
-                <option value="30">$30</option>
-                <input type="button" name="name" value="">
-              </select> -->
               <input id="amount" ng-model="userCharge" type="number" class="validate" placeholder="10">
               <label for="amount">$ Pledge Amount</label>
             </div>
