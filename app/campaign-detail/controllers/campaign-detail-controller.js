@@ -16,7 +16,7 @@
     var vm = this;
     vm.ended = false;
     vm.funded = false;
-    vm.currentUserId = $cookies.getObject('user') || 84;
+    vm.currentUserId = $cookies.getObject('user') || 1;
     vm.campaignId = $stateParams.id;
 
     CampaignDetailService.getProjectsById(vm.campaignId).then(function(data) {
