@@ -1,17 +1,13 @@
 
-/*div {
-  border: solid black 1px;
-}*/
-/*style="background-image:url(../images/littleStores.jpeg);
-background-size:contain;
-background-repeat: no-repeat; height:400px"*/
-
-
 nav ul a,
 nav .brand-logo {
   color: #444;
 }
 
+.parallax img {
+  display: block;
+  transform: translate3d(-50%, 206px, 0px);
+}
 p {
   line-height: 2rem;
 }
@@ -64,4 +60,4 @@ footer.page-footer {
 .accent-color          { background: #607D8B; }
 .primary-text-color    { color: #212121; }
 .secondary-text-color  { color: #727272; }
-.divider-color         { border-color: #B6B6B6; }
+.divider-color         { border-color: #B6B6B6; }*/

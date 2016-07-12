@@ -19,9 +19,4 @@
       'profile',
       'ngCookies'
     ])
-    // .controller('NavCtrl',['$scope', '$location', function($scope, $location){
-    //   $scope.buttons = [
-    //     {ui-sref: '/profile'}
-    //   ]
-    // }])
 }());
