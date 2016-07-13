@@ -8,30 +8,12 @@
    * @description
    *
    */
-  // describe('Controller: NavCtrl', function() {
-  //
-  //   beforeEach(module('p2p'));
-  //
-  //   var NavCtrl,
-  //       scope,
-  //       location;
-  //
-  //   beforeEach(inject(funciton($controller, $rootScope, $location) {
-  //     location = $location;
-  //     scope = $rootScope.$new();
-  //     NavCtrl = $controller('NavCtrl', {
-  //       $scope: scope
-  //     })
-  //   }))
-  //
-  //
-  //
-  // })
+
   angular
     .module('nav')
     .controller('NavCtrl', NavCtrl);
 
-  function NavCtrl($scope, $state, $cookies) {
+  function NavCtrl($scope, $state, $cookies, ProfileService) {
     $scope.isLoggedIn = function() {
       var sessionCookie= $cookies.get('session');
       if (sessionCookie == null || sessionCookie == undefined) {
