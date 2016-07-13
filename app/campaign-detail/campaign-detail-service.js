@@ -29,14 +29,15 @@
         });
       },
       createUserCharge: function(backer_id,proj_id,amount,user_id){
+
         console.log('charged');
         var userCharge = {};
-        userCharge.backer_id = 1;
-        userCharge.proj_id = projId;
-        userCharge.amount = 1000;
-        userCharge.user_id = 1;
+        userCharge.backer_id = backer_id;
+        userCharge.proj_id = proj_id;
+        userCharge.amount = amount;
+        userCharge.user_id = user_id;
 
-        return $http.post('/api/user_projects/' + userCharge.proj_id + '/charge', vm.userCharge)
+        return $http.post('/api/user_projects/' + userCharge.proj_id + '/charge', userCharge)
         .then(function(user){
           return user;
         })
@@ -49,15 +50,11 @@
       },
       getCurrentUser: function() {
         var sessionCookie= $cookies.get('session');
-        if (sessionCookie = 'undefined') {
-          return;
-        }
-        else {
-          var parsedCookie = JSON.parse(atob(sessionCookie));
-          console.log(parsedCookie);
-          console.log(parsedCookie.passport.user.id);
-          return parsedCookie.passport.user.id;
-        }
+        console.log('sessionCookie', sessionCookie);
+        var parsedCookie = JSON.parse(atob(sessionCookie));
+        console.log(parsedCookie);
+        console.log(parsedCookie.passport.user.id);
+        return parsedCookie.passport.user;
       }
     }
   };
