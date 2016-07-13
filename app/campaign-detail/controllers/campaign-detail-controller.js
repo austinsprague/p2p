@@ -15,11 +15,13 @@
   function CampaignDetailCtrl($state, $stateParams, CampaignDetailService, $http) {
     var vm = this;
     vm.campaignId = $stateParams.id;
-    vm.loggedin = false;
-    vm.currentUserId = CampaignDetailService.getCurrentUser();
-    if (vm.currentUserId) {
+    var currentUser = CampaignDetailService.getCurrentUser();
+    if (currentUser.id) {
       vm.loggedin = true;
-      console.log(vm.loggedin);
+      vm.currentUserId = currentUser.id;
+      vm.currentUserName = currentUser.display_name;
+    } else {
+      vm.loggedin = false;
     }
 
     CampaignDetailService.getProjectsById(vm.campaignId).then(function(data) {
@@ -51,7 +53,8 @@
     })
 
     vm.createUserCharge = function(amount){
-      if (vm.loggedin) {
+      var token;
+      if (vm.loggedin && amount) {
         vm.userCharge = {};
         vm.userCharge.backer_id = vm.currentUserId;
         vm.userCharge.proj_id = vm.campaignId;
