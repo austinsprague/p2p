@@ -17,6 +17,7 @@
       'campaignDetail',
       'signup',
       'profile',
-      'ngCookies'
+      'ngCookies',
+      'nav'
     ])
 }());

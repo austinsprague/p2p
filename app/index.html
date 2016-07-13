@@ -24,15 +24,16 @@
 
   </head>
   <body>
-    <nav class="white" role="navigation">
+    <!-- <nav class="white" role="navigation">
       <div class="nav-wrapper container">
         <a id="logo-container" href="#" class="blue-text"><img ng-src="./images/logo.png" alt="logo" style="max-height:80%;"/>Local + Addition</a>
         <ul class="right hide-on-med-and-down ">
             <li class="blue-text"><a href="/auth/stripe" class="blue-text">Login | Register</a></li>
-            <li class="blue-text"><a ui-sref="profile" class="blue-text">Profile</a></li>
+            <li class="blue-text"><a class="blue-text">Profile </a></li>
         </ul>
       </div>
-    </nav>
+    </nav> -->
+      <navbar></navbar>
 
     <!-- <div class="container"> -->
       <div ui-view></div>
@@ -50,7 +51,15 @@
     <!-- <script type="text/javascript" src="./bower_components/angular-payments/lib/angular-payments.js"></script> -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+    <!-- <script type="text/javascript">
 
+      var sessionCookie= $cookies.get('session');
+      if (sessionCookie == null || sessionCookie == undefined) {
+        return null;
+      }
+      var parsedCookie = JSON.parse(atob(sessionCookie));
+
+    </script> -->
   <!-- Compiled and minified JavaScript -->
     </body>
 </html>
