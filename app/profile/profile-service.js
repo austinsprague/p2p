@@ -5,7 +5,7 @@
   .module('profile')
   .factory('ProfileService', ProfileService);
 
-  function ProfileService($http) {
+  function ProfileService($http, $cookies) {
 
     return {
       getUser: function(userId) {
@@ -27,6 +27,15 @@
         return $http.get('/api/profile/backed/'+ id).then(function(data){
           return data.data;
         });
+      },
+      getCurrentUser: function() {
+        var sessionCookie= $cookies.get('session');
+        if (sessionCookie == null || sessionCookie == undefined) {
+          return null;
+        }
+        var parsedCookie = JSON.parse(atob(sessionCookie));
+        console.log(parsedCookie.passport.user.id);
+        return parsedCookie.passport.user.id;
       }
     }
   }
