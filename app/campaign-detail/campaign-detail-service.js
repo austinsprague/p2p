@@ -5,7 +5,7 @@
   .module('campaignDetail')
   .factory('CampaignDetailService', CampaignDetailService);
 
-  function CampaignDetailService($http) {
+  function CampaignDetailService($http, $cookies) {
 
     return {
       getProjectsById: function(id) {
@@ -46,6 +46,18 @@
         .then(function(data){
           return data;
         })
+      },
+      getCurrentUser: function() {
+        var sessionCookie= $cookies.get('session');
+        if (sessionCookie = 'undefined') {
+          return;
+        }
+        else {
+          var parsedCookie = JSON.parse(atob(sessionCookie));
+          console.log(parsedCookie);
+          console.log(parsedCookie.passport.user.id);
+          return parsedCookie.passport.user.id;
+        }
       }
     }
   };

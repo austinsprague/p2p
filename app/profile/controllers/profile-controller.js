@@ -14,7 +14,6 @@
 
   function ProfileCtrl($state, $stateParams, ProfileService, $cookies) {
     var vm = this;
-    console.log($cookies.get('kitty'));
     var currentUserId = $cookies.get('kitty') || 1;
     console.log(currentUserId);
 
@@ -26,7 +25,11 @@
       vm.projects = projects;
     });
     ProfileService.getBackedProj(currentUserId).then(function(projects){
-      vm.backedProj = projects;
+      if (projects.length > 0 ) {
+        vm.header = 'Campaigns you\'ve backed!'
+        vm.backedProj = projects;
+      }
+
     });
     vm.createCampaign = function(){
       ProfileService.createCampaign(vm.proj, currentUserId);
