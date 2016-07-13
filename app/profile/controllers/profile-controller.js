@@ -19,7 +19,7 @@
 
     ProfileService.getUser(currentUser.id).then(function(user){
       vm.user = user;
-      vm.display_name = user.display_name.replace(/_/g, " ");
+      vm.display_name = user.display_name
     });
     ProfileService.getProjects(currentUser.id).then(function(projects){
       vm.projects = projects;

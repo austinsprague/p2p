@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row" style="margin-top:5%">
-    <h5 style="text-transform:uppercase;">Hello, {{profile.display_name}}!</h5>
+    <h5>Your Profile</h5>
     <div class="divider"></div>
   </div>
   <!-- <div class="row"> -->
@@ -24,16 +24,18 @@
     </div>
   </div>
   <div class="row">
+    <div class="col s9" ng-hide="profile.projects">
+      <h5>You have no active campaigns</h5>
+    </div>
     <div class="col s9">
-      <h5 ng-show="profile.projects.id">Active Campaigns</h5>
-      <h5 ng-show="profile.projects">You have no active campaigns</h5>
+      <h5 ng-show="profile.projects">Active Campaigns</h5>
     </div>
     <div class="col s3">
       <span>Create New Campaign</span>
       <a class="btn-floating btn-small waves-effect waves-light red" ui-sref="newcampaign"><i class="material-icons">create</i></a>
     </div>
   </div>
-  <div class="row" ng-show="profile.projects">
+  <div class="row">
     <ul class="collection" ng-repeat="project in profile.projects" ui-sref="campaignDetail({id: project.id})">
       <li class="collection-item avatar">
         <img src="{{project.img_url}}" alt="" class="circle">
